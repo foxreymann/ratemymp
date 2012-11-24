@@ -10,10 +10,11 @@
 </head> 
 <body> 
 
+<!-- Start of first page: #one -->
 <div data-role="page" id="one">
 
 	<div data-role="header">
-		<h1>Rate my MP</h1>
+		<h1>Me</h1>
 	</div><!-- /header -->
 
 	<div data-role="content">	
@@ -22,7 +23,58 @@
 		<button onclick="postcode()">Submit</button>
 	</div><!-- /content -->
 
-</div><!-- /page -->
+	<div data-role="fieldcontain" >
+          <div data-role="fieldcontain"><br /><br />
+            <b><label for="postcode">Postcode:</label></b>
+            <input type="text" name="postcode" id="postcode" value=""  />
+          </div><br /><br />
+                <p>About Myself</p><br /><br />
+
+                <label for="cultural_slide"></label>
+                <input type="hidden" data-type="range" name="cultural_slide" id="cultural_slide" value="50" min="0" max="100" data-highlight="true" /><br /><br />
+
+		<label for="economic_slide"></label>
+                <input type="hidden" data-type="range" name="economic_slide" id="economic_slide" value="50" min="0" max="100" data-highlight="true" /><br /><br />
+
+		<p><a href="#two" data-role="button">next</a></p>
+                
+                <br /><br /><br /><br />
+	</div><!-- /content -->
+	
+	<div data-role="footer" data-theme="d">
+		<h4>Thanks for filling</h4>
+	</div><!-- /footer -->
+</div><!-- /page one -->
+
+
+<!-- Start of second page: #two -->
+<div data-role="page" id="two">
+
+	<div data-role="header">
+		<h1>My MP</h1>
+	</div><!-- /header -->
+
+	<div data-role="fieldcontain" >	
+		<h2>Name of the MP</h2> <br /><br />
+                <p>Details of MP</p><br /><br />
+
+                <label for="cultural_slide"></label>
+                <p>Genghis Khan
+                  <input type="hidden" data-type="range" name="cultural_slide" id="cultural_slide" value="50" min="0" max="100" data-highlight="true" /><br /><br />
+                Bambi</p>
+
+		<label for="economic_slide"></label>
+                <input type="hidden" data-type="range" name="economic_slide" id="economic_slide" value="50" min="0" max="100" data-highlight="true" /><br /><br />
+
+		<p><a href="#two" data-role="button">next</a></p>
+                
+                <br /><br /><br /><br />
+	</div><!-- /content -->
+	
+	<div data-role="footer">
+		<h4>Thanks for filling</h4>
+	</div><!-- /footer -->
+</div><!-- /page two -->
 
 <div data-role="page" id="two">
 	<div data-role="header">
