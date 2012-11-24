@@ -6,20 +6,42 @@
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
 	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+	<script src="js/jquery.jsonp.js"></script>
 </head> 
 <body> 
 
-<div data-role="page">
+<div data-role="page" id="one">
 
 	<div data-role="header">
-		<h1>My Title</h1>
+		<h1>Rate my MP</h1>
 	</div><!-- /header -->
 
 	<div data-role="content">	
-		<p>Hello world</p>		
+		<label for="pc">Enter your UK postcode here:</label>
+		<input type="text" name="pc" id="pc" size="8" maxlength="10" value="" class="text">	
+		<button onclick="postcode()">Submit</button>
 	</div><!-- /content -->
 
 </div><!-- /page -->
+
+
+<script>
+var postcode = function() {
+	var postcode = $('#pc').val();
+
+	$.jsonp({
+		url: "http://www.theyworkforyou.com/api/getMP?key=AeLEgrG66uiVBxMSy4BxmBmX&postcode=" + postcode + "&output=js&callback=?",
+	    callback: "i_jqjsp",
+		success: function(json) {
+			console.log(json);
+		},
+		error: function() {
+		   // This will be called in case of error no matter the callback name
+		}
+	});
+
+}
+</script>
 
 </body>
 </html>
